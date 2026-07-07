@@ -1,8 +1,8 @@
 import { ANIMATION } from '@/constants/animations';
+import { Badge } from 'flowbite-react';
 import { SECTIONS } from '@/constants/sections';
 import { Section } from '@/components/layout/Section';
 import { Card } from '@/components/ui/Card';
-import { Pill } from '@/components/ui/Pill';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import type { ExperienceSectionProps } from '@/types/sections';
 
@@ -33,7 +33,12 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
               </div>
               <div className="flex flex-wrap gap-2 md:justify-end">
                 {exp.tags.map((tag) => (
-                  <Pill key={tag}>{tag}</Pill>
+                  <Badge
+                    key={tag}
+                    className="rounded-full border border-border bg-surface px-3 py-1 text-xs font-normal text-muted"
+                  >
+                    {tag}
+                  </Badge>
                 ))}
               </div>
             </div>

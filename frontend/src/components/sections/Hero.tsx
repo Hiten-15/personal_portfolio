@@ -1,7 +1,7 @@
 import { COPY } from '@/constants/copy';
 import { getHeroStats } from '@/constants/stats';
 import { SECTIONS } from '@/constants/sections';
-import { Button } from '@/components/ui/Button';
+import { Badge, Button } from 'flowbite-react';
 import { SocialLinks } from '@/components/ui/SocialLinks';
 import { StatItem } from '@/components/ui/StatItem';
 import type { HeroProps } from '@/types/sections';
@@ -17,10 +17,10 @@ export function Hero({ site }: HeroProps) {
       <div className="mx-auto grid max-w-content items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="animate-fade-up space-y-6" style={{ animationDelay: '0.1s' }}>
           {site.showAvailability && (
-            <div className="inline-flex items-center gap-2 rounded-full bg-blue-tint px-4 py-1.5 text-xs font-medium text-primary">
+            <Badge className="inline-flex items-center gap-2 rounded-full bg-blue-tint px-4 py-1.5 text-xs font-medium text-primary">
               <span className="h-2 w-2 rounded-full bg-primary animate-pulse-dot" />
               {COPY.hero.availability}
-            </div>
+            </Badge>
           )}
 
           <p className="text-xs uppercase tracking-[0.18em] text-faint">{site.tagline}</p>
@@ -33,8 +33,18 @@ export function Hero({ site }: HeroProps) {
           <p className="max-w-xl text-base leading-relaxed text-muted">{site.bio}</p>
 
           <div className="flex flex-wrap gap-3">
-            <Button href={`#${SECTIONS.projects.id}`}>{COPY.hero.cta.projects}</Button>
-            <Button href={`#${SECTIONS.contact.id}`} variant="outline">
+            <Button
+              href={`#${SECTIONS.projects.id}`}
+              color="blue"
+              className="rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-surface hover:!bg-primary-dark focus:ring-primary"
+            >
+              {COPY.hero.cta.projects}
+            </Button>
+            <Button
+              href={`#${SECTIONS.contact.id}`}
+              color="light"
+              className="rounded-full border border-border-blue bg-transparent px-6 py-2.5 text-sm font-medium text-primary hover:!bg-blue-tint focus:ring-primary"
+            >
               {COPY.hero.cta.contact}
             </Button>
           </div>

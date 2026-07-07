@@ -1,22 +1,9 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react';
-
-export type ButtonVariant = 'primary' | 'outline' | 'ghost';
-
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
-  href?: string;
-  children: ReactNode;
-}
+import type { ReactNode } from 'react';
 
 export interface CardProps {
   children: ReactNode;
   className?: string;
   featured?: boolean;
-}
-
-export interface PillProps {
-  children: ReactNode;
-  className?: string;
 }
 
 export interface SectionHeaderProps {

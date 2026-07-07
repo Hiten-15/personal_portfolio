@@ -1,3 +1,4 @@
+import { Badge } from 'flowbite-react';
 import { COPY } from '@/constants/copy';
 import { SECTIONS } from '@/constants/sections';
 import { Section } from '@/components/layout/Section';
@@ -32,9 +33,9 @@ export function About({ site, education }: AboutProps) {
             <p className="mt-1 text-sm text-faint">
               {education.dates} · {education.location}
             </p>
-            <span className="mt-4 inline-block rounded-full bg-blue-tint px-3 py-1 text-xs font-medium text-primary">
+            <Badge className="mt-4 inline-block rounded-full bg-blue-tint px-3 py-1 text-xs font-medium text-primary">
               {education.cgpa}
-            </span>
+            </Badge>
           </div>
         </Card>
       </div>

@@ -1,5 +1,5 @@
 import { CONTACT_NAV, LOGO, NAV_LINKS } from '@/constants/navigation';
-import { Button } from '@/components/ui/Button';
+import { Button } from 'flowbite-react';
 
 export function Navbar() {
   return (
@@ -22,7 +22,11 @@ export function Navbar() {
           ))}
         </ul>
 
-        <Button href={CONTACT_NAV.href} variant="primary" className="!px-5 !py-2 text-xs">
+        <Button
+          href={CONTACT_NAV.href}
+          color="blue"
+          className="rounded-full bg-primary !px-5 !py-2 text-xs font-medium text-surface hover:!bg-primary-dark focus:ring-primary"
+        >
           {CONTACT_NAV.label}
         </Button>
       </nav>

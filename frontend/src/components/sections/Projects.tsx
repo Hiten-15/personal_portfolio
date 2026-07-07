@@ -1,10 +1,10 @@
 import { HiArrowTopRightOnSquare } from 'react-icons/hi2';
+import { Badge } from 'flowbite-react';
 import { ANIMATION } from '@/constants/animations';
 import { COPY } from '@/constants/copy';
 import { SECTIONS } from '@/constants/sections';
 import { Section } from '@/components/layout/Section';
 import { Card } from '@/components/ui/Card';
-import { Pill } from '@/components/ui/Pill';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import type { ProjectsProps } from '@/types/sections';
 
@@ -50,7 +50,9 @@ export function Projects({ projects, githubUrl, repos }: ProjectsProps) {
                   <p className="mt-2 text-sm text-muted">{project.description}</p>
                 )}
                 <div className="mt-4">
-                  <Pill>{project.stack}</Pill>
+                  <Badge className="rounded-full border border-border bg-surface px-3 py-1 text-xs font-normal text-muted">
+                    {project.stack}
+                  </Badge>
                 </div>
               </div>
             </Card>

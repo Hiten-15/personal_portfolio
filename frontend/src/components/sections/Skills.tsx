@@ -1,8 +1,8 @@
 import { ANIMATION } from '@/constants/animations';
+import { Badge } from 'flowbite-react';
 import { SECTIONS } from '@/constants/sections';
 import { Section } from '@/components/layout/Section';
 import { Card } from '@/components/ui/Card';
-import { Pill } from '@/components/ui/Pill';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import type { SkillsProps } from '@/types/sections';
 
@@ -22,7 +22,12 @@ export function Skills({ skillCategories }: SkillsProps) {
               <h3 className="font-serif text-lg font-semibold text-ink">{cat.category}</h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {cat.items.map((item) => (
-                  <Pill key={item}>{item}</Pill>
+                  <Badge
+                    key={item}
+                    className="rounded-full border border-border bg-surface px-3 py-1 text-xs font-normal text-muted"
+                  >
+                    {item}
+                  </Badge>
                 ))}
               </div>
             </div>
