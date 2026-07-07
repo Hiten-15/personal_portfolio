@@ -1,0 +1,95 @@
+# Portfolio — Cursor Rules
+
+## Core Principles
+- **DRY**: Extract logic/UI used 2+ times → custom hook, shared component, or constant
+- **KISS**: Prefer simple solutions; this is a static portfolio, not a full web app
+- **CSS-First**: Tailwind classes only; inline styles only for dynamic values (e.g. scroll progress width)
+
+## Tech Stack
+- **Framework**: Vite + React 18 + TypeScript (strict mode)
+- **Server state**: TanStack React Query — single `GET /api/portfolio` fetch
+- **Styling**: Tailwind CSS + custom theme tokens in `tailwind.config.ts`
+- **Icons**: `react-icons` only (FaGithub, FaLinkedin, HiArrowUp, etc.)
+- **HTTP**: Native `fetch` via `src/api/portfolio.ts`
+- **Shared types**: `@portfolio/shared/types/portfolio` — API contract with backend
+
+## Project Structure
+```
+src/
+├── api/                    # fetch helpers (portfolio.ts)
+├── components/
+│   ├── layout/             # Navbar, Footer, ScrollProgressBar, Section
+│   ├── sections/           # Hero, About, Experience, Projects, Skills, Contact, TechMarquee
+│   └── ui/                 # Button, Card, Pill, SectionHeader, SocialLinks, StatItem
+├── constants/              # Navigation, sections, copy, stats, query keys, animations
+├── hooks/                  # useScrollProgress, useRevealOnScroll, useCountUp
+├── types/                  # Frontend-only types (component props, UI config)
+├── App.tsx
+├── main.tsx
+└── index.css               # Tailwind + keyframe animations
+```
+
+## Where Things Go
+- **Types** → `src/types/` — component props, UI config shapes. API shapes live in `@portfolio/shared`.
+- **Constants** → `src/constants/` — nav links, section metadata, static copy, stat configs, query keys.
+- **Data from API** → rendered via `.map()` in section components; add new items in backend seed, not hardcoded in UI.
+- **Static UI copy** (headlines, labels) → `src/constants/copy.ts` so text is easy to find and update.
+
+## API Client
+```ts
+import { fetchPortfolio } from '@/api/portfolio';
+
+const data = await fetchPortfolio(); // returns PortfolioContent directly
+```
+
+Response shape from backend: `{ data: PortfolioContent }` — unwrapped inside `fetchPortfolio`.
+
+## State Management
+React Query for the single portfolio payload:
+```ts
+import { QUERY_KEYS } from '@/constants/query';
+
+const { data, isLoading, isError, refetch } = useQuery({
+  queryKey: QUERY_KEYS.portfolio,
+  queryFn: fetchPortfolio,
+});
+```
+
+No Zustand, no auth, no forms — keep it simple.
+
+## Coding Standards
+
+**TypeScript**
+- Strict mode — no implicit `any`
+- `interface` for object shapes; `type` for unions/aliases
+- Component prop types live in `src/types/`, not inline in components
+
+**Components**
+- Functional only
+- One section = one file in `components/sections/`
+- Use `Section` layout wrapper for consistent padding/max-width
+- Extract to hook only if logic is reused or non-trivial
+
+**Naming**
+- Components: `PascalCase.tsx`
+- Hooks: `useXxx.ts`
+- Constants files: `camelCase.ts` exporting `UPPER_SNAKE` or named configs
+- Types files: grouped by domain (`components.ts`, `sections.ts`)
+
+**Styling**
+- Use Tailwind theme tokens: `bg-cream`, `text-ink`, `text-primary`, `border-border`
+- See `docs/DESIGN_THEMING.md` for color palette
+- See `docs/DESIGN_SYSTEM.md` for typography, spacing, motion
+- Add `aria-label` to icon-only interactive elements
+
+## Adding New Content
+1. **New section** → add constant in `constants/sections.ts`, create component in `components/sections/`, wire in `App.tsx`
+2. **New nav link** → add entry to `constants/navigation.ts`
+3. **New portfolio data** (experience, project, skill) → update backend seed; frontend maps over API data automatically
+4. **New static label** → add to `constants/copy.ts`
+
+## Before You Code
+- Run `npm run dev` from the monorepo root — do not `cd` into `frontend/` or `backend/` for daily dev
+- Check `src/components/ui/` and `src/hooks/` — something may already exist
+- Check `src/constants/` before hardcoding strings or IDs
+- No new `npm` dependencies without discussion

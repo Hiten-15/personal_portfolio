@@ -1,0 +1,10 @@
+{
+  "name": "@portfolio/shared",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./src/types/portfolio.ts",
+  "types": "./src/types/portfolio.ts",
+  "exports": {
+    "./types/portfolio": "./src/types/portfolio.ts"
+  }
+}
