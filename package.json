@@ -14,9 +14,11 @@
     "dev:frontend": "npm run dev -w frontend",
     "build": "npm run build -w backend && npm run build -w frontend",
     "seed": "npm run seed -w backend",
-    "extract-profile": "node scripts/extract-profile.mjs"
+    "extract-profile": "node scripts/extract-profile.mjs",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "husky": "^9.1.7"
   }
 }

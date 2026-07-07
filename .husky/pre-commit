@@ -1,2 +1,1 @@
-#!/bin/sh
-cd fxhive-web && npx lint-staged
+npm run build
