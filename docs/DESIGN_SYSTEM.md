@@ -57,7 +57,7 @@ Define variants centrally in `frontend/src/components/ui/`:
 ## Elevation
 
 - **Cards**: subtle border `border-border`, hover shadow on lift.
-- **Nav**: `backdrop-blur-sm` with semi-transparent cream background.
+- **Nav**: `backdrop-blur-sm` with semi-transparent cream background; theme toggle (`ThemeToggle` / Flowbite `ToggleSwitch`) on the left.
 - **Contact block**: blue gradient background, no card shadow.
 
 ## Layout patterns

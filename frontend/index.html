@@ -11,6 +11,27 @@
       rel="stylesheet"
     />
     <title>Hiten Mehta — Portfolio</title>
+    <!-- Prevent theme flash before React hydrates (Flowbite ThemeModeScript, Tailwind v3) -->
+    <script>
+      try {
+        const storageMode = window.localStorage.getItem('flowbite-theme-mode');
+        const isStorageModeValid =
+          storageMode === 'light' || storageMode === 'dark' || storageMode === 'auto';
+        const resolvedMode = (isStorageModeValid ? storageMode : null) ?? 'light';
+        const computedMode =
+          resolvedMode === 'auto'
+            ? window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light'
+            : resolvedMode;
+        if (computedMode === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        localStorage.setItem('flowbite-theme-mode', resolvedMode);
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

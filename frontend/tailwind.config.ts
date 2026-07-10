@@ -2,29 +2,32 @@ import type { Config } from 'tailwindcss';
 import flowbitePlugin from 'flowbite/plugin';
 
 export default {
+  darkMode: 'class',
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/flowbite-react/lib/esm/**/*.js',
+    './node_modules/flowbite-react/dist/**/*.js',
+    '../node_modules/flowbite-react/dist/**/*.js',
   ],
   theme: {
     extend: {
       colors: {
-        cream: '#f6f4ee',
-        surface: '#fffefb',
-        ink: '#21261f',
-        muted: '#6e7567',
-        faint: '#9aa092',
+        cream: 'rgb(var(--color-cream) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        ink: 'rgb(var(--color-ink) / <alpha-value>)',
+        muted: 'rgb(var(--color-muted) / <alpha-value>)',
+        faint: 'rgb(var(--color-faint) / <alpha-value>)',
         primary: {
-          DEFAULT: '#1a5dab',
-          dark: '#103f78',
-          light: '#4a8de0',
+          DEFAULT: 'rgb(var(--color-primary) / <alpha-value>)',
+          dark: 'rgb(var(--color-primary-dark) / <alpha-value>)',
+          light: 'rgb(var(--color-primary-light) / <alpha-value>)',
         },
-        'blue-tint': '#e8effa',
+        'blue-tint': 'rgb(var(--color-blue-tint) / <alpha-value>)',
         border: {
-          DEFAULT: '#e3dfd3',
-          blue: '#c9d6ea',
+          DEFAULT: 'rgb(var(--color-border) / <alpha-value>)',
+          blue: 'rgb(var(--color-border-blue) / <alpha-value>)',
         },
+        'on-accent': 'rgb(var(--color-on-accent) / <alpha-value>)',
       },
       fontFamily: {
         serif: ['"Source Serif 4"', 'Georgia', 'serif'],

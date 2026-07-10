@@ -7,7 +7,7 @@ export function StatItem({ value, label, decimals = 0 }: StatItemProps) {
 
   return (
     <div>
-      <p className="font-serif text-3xl font-semibold tabular-nums text-primary-dark md:text-4xl">
+      <p className="font-serif text-3xl font-semibold tabular-nums text-primary-dark dark:text-primary-light md:text-4xl">
         {decimals > 0 ? count.toFixed(decimals) : count}
       </p>
       <p className="mt-1 text-xs uppercase tracking-widest text-faint">{label}</p>

@@ -3,12 +3,38 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-cream: 246 244 238;
+    --color-surface: 255 254 251;
+    --color-ink: 33 38 31;
+    --color-muted: 110 117 103;
+    --color-faint: 154 160 146;
+    --color-primary: 26 93 171;
+    --color-primary-dark: 16 63 120;
+    --color-primary-light: 74 141 224;
+    --color-blue-tint: 232 239 250;
+    --color-border: 227 223 211;
+    --color-border-blue: 201 214 234;
+    --color-on-accent: 255 254 251;
+  }
+
+  .dark {
+    --color-cream: 20 22 18;
+    --color-surface: 30 33 27;
+    --color-ink: 240 238 230;
+    --color-muted: 168 174 160;
+    --color-faint: 122 128 116;
+    --color-blue-tint: 30 42 58;
+    --color-border: 47 51 44;
+    --color-border-blue: 58 74 94;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-cream text-ink antialiased;
+    @apply bg-cream text-ink antialiased transition-colors duration-200;
   }
 
   :focus-visible {
@@ -88,6 +114,10 @@
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  body {
+    transition: none;
   }
 
   .animate-fade-up,

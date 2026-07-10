@@ -36,7 +36,7 @@ export function Hero({ site }: HeroProps) {
             <Button
               href={`#${SECTIONS.projects.id}`}
               color="blue"
-              className="rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-surface hover:!bg-primary-dark focus:ring-primary"
+              className="rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-on-accent hover:!bg-primary-dark focus:ring-primary"
             >
               {COPY.hero.cta.projects}
             </Button>

@@ -9,7 +9,7 @@ export function ErrorState({ onRetry }: ErrorStateProps) {
       <Button
         color="blue"
         onClick={onRetry}
-        className="rounded-full bg-primary px-6 py-2 text-sm font-medium text-surface hover:!bg-primary-dark focus:ring-primary"
+        className="rounded-full bg-primary px-6 py-2 text-sm font-medium text-on-accent hover:!bg-primary-dark focus:ring-primary"
       >
         {COPY.app.retry}
       </Button>

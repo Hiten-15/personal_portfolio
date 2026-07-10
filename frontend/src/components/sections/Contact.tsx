@@ -18,7 +18,7 @@ export function Contact({ site }: ContactProps) {
       <div
         data-reveal
         data-reveal-delay="100"
-        className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-dark to-primary p-8 text-surface md:p-12"
+        className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-dark to-primary p-8 text-on-accent md:p-12"
       >
         <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/10" />
         <div className="pointer-events-none absolute -bottom-12 -left-12 h-36 w-36 rounded-full bg-white/5" />
