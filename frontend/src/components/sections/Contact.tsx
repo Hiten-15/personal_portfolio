@@ -44,7 +44,7 @@ export function Contact({ site }: ContactProps) {
               {site.phone}
             </a>
           )}
-          <span className="inline-flex items-center gap-2 text-sm text-blue-tint">
+          <span className="inline-flex items-center gap-2 text-sm text-on-accent/80">
             <HiMapPin className="h-5 w-5" />
             {site.location}
           </span>
