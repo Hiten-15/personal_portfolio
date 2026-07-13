@@ -6,6 +6,7 @@ MERN stack personal portfolio monorepo (MongoDB, Express, React, Node.js) with T
 
 ```
 personal_portfolio/
+├── api/          # Vercel serverless entry (Express)
 ├── frontend/     # Vite + React + TypeScript + Tailwind
 ├── backend/      # Express + TypeScript + Mongoose
 ├── shared/       # Shared TypeScript types
