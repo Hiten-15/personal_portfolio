@@ -15,7 +15,7 @@
     "build": "npm run build -w backend && npm run build -w frontend",
     "seed": "npm run seed -w backend",
     "extract-profile": "node scripts/extract-profile.mjs",
-    "prepare": "husky"
+    "prepare": "command -v husky >/dev/null 2>&1 && husky || true"
   },
   "devDependencies": {
     "@types/node": "^22.10.5",
