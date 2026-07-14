@@ -38,10 +38,14 @@ export function Projects({ projects, githubUrl, repos }: ProjectsProps) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="block"
+            className="block h-full"
           >
-            <Card>
-              <div data-reveal data-reveal-delay={String(i * ANIMATION.projectRevealStagger)}>
+            <Card className="flex h-full flex-col">
+              <div
+                className="flex h-full flex-1 flex-col"
+                data-reveal
+                data-reveal-delay={String(i * ANIMATION.projectRevealStagger)}
+              >
                 <div className="flex items-start justify-between gap-2">
                   <h3 className="font-serif text-lg font-semibold text-ink">{project.title}</h3>
                   <HiArrowTopRightOnSquare className="h-4 w-4 shrink-0 text-faint" />
@@ -49,7 +53,7 @@ export function Projects({ projects, githubUrl, repos }: ProjectsProps) {
                 {project.description && (
                   <p className="mt-2 text-sm text-muted">{project.description}</p>
                 )}
-                <div className="mt-4">
+                <div className="mt-auto pt-4">
                   <Badge className="rounded-full border border-border bg-surface px-3 py-1 text-xs font-normal text-muted">
                     {project.stack}
                   </Badge>
