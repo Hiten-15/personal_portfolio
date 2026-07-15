@@ -33,9 +33,9 @@ export function SocialLinks({
           rel="noopener noreferrer"
           className={className}
         >
-          <Icon className="h-4 w-4" />
+          <Icon className="size-4" />
           {label}
-          {showExternalIcon && <HiArrowTopRightOnSquare className="h-3 w-3" />}
+          {showExternalIcon && <HiArrowTopRightOnSquare className="size-3" />}
         </a>
       ))}
     </div>

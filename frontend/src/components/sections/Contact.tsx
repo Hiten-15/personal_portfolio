@@ -32,7 +32,7 @@ export function Contact({ site }: ContactProps) {
             href={`mailto:${site.email}`}
             className="inline-flex items-center gap-2 text-sm transition-opacity duration-200 hover:opacity-80"
           >
-            <HiEnvelope className="h-5 w-5" />
+            <HiEnvelope className="size-5" />
             {site.email}
           </a>
           {site.showPhone && (
@@ -40,12 +40,12 @@ export function Contact({ site }: ContactProps) {
               href={`tel:${site.phone.replace(/\s/g, '')}`}
               className="inline-flex items-center gap-2 text-sm transition-opacity duration-200 hover:opacity-80"
             >
-              <HiPhone className="h-5 w-5" />
+              <HiPhone className="size-5" />
               {site.phone}
             </a>
           )}
           <span className="inline-flex items-center gap-2 text-sm text-on-accent/80">
-            <HiMapPin className="h-5 w-5" />
+            <HiMapPin className="size-5" />
             {site.location}
           </span>
         </div>

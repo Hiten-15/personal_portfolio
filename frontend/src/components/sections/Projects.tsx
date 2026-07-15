@@ -25,7 +25,7 @@ export function Projects({ projects, githubUrl, repos }: ProjectsProps) {
               className="inline-flex items-center gap-1 text-sm text-primary transition-colors duration-200 hover:text-primary-dark"
             >
               {COPY.projects.allRepos(repos)}
-              <HiArrowTopRightOnSquare className="h-4 w-4" />
+              <HiArrowTopRightOnSquare className="size-4" />
             </a>
           }
         />
@@ -48,7 +48,7 @@ export function Projects({ projects, githubUrl, repos }: ProjectsProps) {
               >
                 <div className="flex items-start justify-between gap-2">
                   <h3 className="font-serif text-lg font-semibold text-ink">{project.title}</h3>
-                  <HiArrowTopRightOnSquare className="h-4 w-4 shrink-0 text-faint" />
+                  <HiArrowTopRightOnSquare className="size-4 shrink-0 text-faint" />
                 </div>
                 {project.description && (
                   <p className="mt-2 text-sm text-muted">{project.description}</p>

@@ -11,14 +11,14 @@ export function Hero({ site }: HeroProps) {
 
   return (
     <section className="relative overflow-hidden px-6 pb-16 pt-12 md:px-10 md:pt-16">
-      <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/5" />
-      <div className="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-primary/5" />
+      <div className="pointer-events-none absolute -right-32 -top-32 size-96 rounded-full bg-primary/5" />
+      <div className="pointer-events-none absolute -bottom-20 -left-20 size-72 rounded-full bg-primary/5" />
 
       <div className="mx-auto grid max-w-content items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="animate-fade-up space-y-6" style={{ animationDelay: '0.1s' }}>
           {site.showAvailability && (
             <Badge className="inline-flex items-center gap-2 rounded-full bg-blue-tint px-4 py-1.5 text-xs font-medium text-primary">
-              <span className="h-2 w-2 rounded-full bg-primary animate-pulse-dot" />
+              <span className="size-2 rounded-full bg-primary animate-pulse-dot" />
               {COPY.hero.availability}
             </Badge>
           )}
@@ -69,7 +69,7 @@ export function Hero({ site }: HeroProps) {
               <img
                 src={site.profileImage}
                 alt={site.name}
-                className="h-72 w-64 rounded-xl object-cover md:h-80 md:w-72"
+                className="size-72 rounded-xl object-cover md:size-80"
               />
             </div>
           </div>

@@ -8,7 +8,7 @@ export function ThemeToggle() {
   return (
     <div className="flex items-center gap-2 rounded-full border border-border bg-surface px-2.5 py-1.5 shadow-sm">
       <HiSun
-        className={`h-4 w-4 transition-colors duration-200 ${isDark ? 'text-faint' : 'text-primary'}`}
+        className={`size-4 transition-colors duration-200 ${isDark ? 'text-faint' : 'text-primary'}`}
         aria-hidden
       />
       <ToggleSwitch
@@ -30,7 +30,7 @@ export function ThemeToggle() {
         }}
       />
       <HiMoon
-        className={`h-4 w-4 transition-colors duration-200 ${isDark ? 'text-primary' : 'text-faint'}`}
+        className={`size-4 transition-colors duration-200 ${isDark ? 'text-primary' : 'text-faint'}`}
         aria-hidden
       />
     </div>
