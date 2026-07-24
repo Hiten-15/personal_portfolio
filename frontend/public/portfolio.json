@@ -1,0 +1,107 @@
+{
+  "data": {
+    "site": {
+      "name": "Hiten Mehta",
+      "role": "Full-Stack Developer · MERN",
+      "tagline": "Full-Stack Developer · MERN",
+      "headline": "Hiten Mehta builds clean, reliable web products",
+      "headlineAccent": "end to end.",
+      "bio": "Full-stack developer from Udaipur, Rajasthan, currently shipping production features at Fx31Labs. Three internships across web development and design. Focused on HRMS dashboards and a fintech investment product — building fast, clean UIs that work under real data.",
+      "email": "hitenmehta1503@gmail.com",
+      "phone": "+91 94689 25174",
+      "location": "Udaipur, Rajasthan",
+      "showAvailability": true,
+      "showPhone": true,
+      "cgpa": 9.05,
+      "interns": 3,
+      "repos": 14,
+      "githubUrl": "https://github.com/Hiten-15",
+      "linkedinUrl": "https://www.linkedin.com/in/hiten-mehta-70a234271/",
+      "profileImage": "/profile.jpg"
+    },
+    "education": {
+      "school": "Pandit Deendayal Energy University",
+      "degree": "B.Tech, Information & Communication Technology",
+      "dates": "2021 – 2025",
+      "location": "Gandhinagar, Gujarat",
+      "cgpa": "CGPA 9.05 / 10"
+    },
+    "experiences": [
+      {
+        "dates": "Jun 2025 – Now",
+        "title": "Full-Stack Developer",
+        "company": "Fx31Labs",
+        "location": "Ahmedabad, Gujarat",
+        "description": "Building HRMS dashboards and a fintech investment product with React, TypeScript, Node.js, and MongoDB.",
+        "tags": ["React · TS", "Node · MongoDB"],
+        "featured": true
+      },
+      {
+        "dates": "Jan – Apr 2025",
+        "title": "Web Developer Intern",
+        "company": "Zidio Development",
+        "location": "Bangalore, Karnataka",
+        "description": "Developed responsive web interfaces using React and Tailwind CSS.",
+        "tags": ["React · Tailwind"],
+        "featured": false
+      },
+      {
+        "dates": "May – Jul 2024",
+        "title": "Web Designer Intern",
+        "company": "Stypix",
+        "location": "Ahmedabad, Gujarat",
+        "description": "Designed and built web layouts with React and Bootstrap.",
+        "tags": ["React · Bootstrap"],
+        "featured": false
+      }
+    ],
+    "projects": [
+      {
+        "title": "Math Race Adventure",
+        "stack": "React · Tailwind",
+        "githubUrl": "https://github.com/Hiten-15/Math_race_adventure",
+        "description": "Interactive math game with racing mechanics."
+      },
+      {
+        "title": "Todo List FX",
+        "stack": "TypeScript",
+        "githubUrl": "https://github.com/Hiten-15/Todo_list_FX",
+        "description": "TypeScript todo app with clean UI."
+      },
+      {
+        "title": "Car Rental",
+        "stack": "JavaScript",
+        "githubUrl": "https://github.com/Hiten-15/Car-rental",
+        "description": "Car rental booking interface."
+      },
+      {
+        "title": "Airbnb Clone",
+        "stack": "CSS",
+        "githubUrl": "https://github.com/Hiten-15/Airbnb-clone",
+        "description": "Landing page clone with modern CSS."
+      },
+      {
+        "title": "Hotel Website",
+        "stack": "HTML",
+        "githubUrl": "https://github.com/Hiten-15/Hotel_website",
+        "description": "Hotel booking website layout."
+      },
+      {
+        "title": "Drum Kit",
+        "stack": "JavaScript",
+        "githubUrl": "https://github.com/Hiten-15/Drum_kit",
+        "description": "Browser-based drum kit with keyboard controls."
+      }
+    ],
+    "skillCategories": [
+      { "category": "Languages", "items": ["JavaScript", "TypeScript", "C/C++", "SQL", "HTML/CSS"] },
+      { "category": "Frameworks", "items": ["React JS", "Node JS", "Tailwind", "Flowbite React"] },
+      { "category": "Data & Core", "items": ["MongoDB", "DBMS", "DSA"] },
+      { "category": "Tools", "items": ["Git", "Docker", "VS Code", "Cursor"] }
+    ],
+    "marqueeItems": [
+      "React JS", "TypeScript", "Node JS", "MongoDB", "Tailwind CSS",
+      "JavaScript", "SQL", "C/C++", "Docker", "Git", "Flowbite React"
+    ]
+  }
+}

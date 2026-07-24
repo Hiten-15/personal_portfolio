@@ -1,7 +1,17 @@
 import '../config/loadEnv.js';
+import { writeFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import type { PortfolioContent } from '@portfolio/shared/types/portfolio';
 import { connectDB } from '../db/connect.js';
 import { Portfolio } from '../models/Portfolio.js';
+import { clearPortfolioCache } from '../services/portfolio.service.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const staticJsonPath = path.resolve(
+  __dirname,
+  '../../../frontend/public/portfolio.json',
+);
 
 const seedData: PortfolioContent = {
   site: {
@@ -135,7 +145,17 @@ async function seed(): Promise<void> {
   await connectDB();
   await Portfolio.deleteMany({});
   await Portfolio.create(seedData);
+  clearPortfolioCache();
+
+  // Keep the static CDN asset in sync so first paint never waits on Atlas.
+  await writeFile(
+    staticJsonPath,
+    `${JSON.stringify({ data: seedData }, null, 2)}\n`,
+    'utf8',
+  );
+
   console.log('Portfolio seeded successfully.');
+  console.log(`Static snapshot written → ${staticJsonPath}`);
   process.exit(0);
 }
 
